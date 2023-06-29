@@ -1,4 +1,5 @@
 const space = ' ';
+const n = '\n';
 const textArea = document.querySelector('[data-text-area]');
 const form = document.querySelector('[data-form]');
 const button = document.querySelector('[data-button]');
@@ -10,8 +11,12 @@ button.addEventListener('click', (event) => {
   form.reset();
 });
 function getWordArray() {
-  wordArray = textArea.value.toLowerCase().split(space);
+  stringArray = textArea.value.toLowerCase().split(n);
 }
 function getLetters() {
-  wordArray.forEach(element => console.log(element.length));
+  wordArray.forEach((element) => {
+    if (element.length !== 0) {
+      console.log(element);
+    }
+  });
 }
