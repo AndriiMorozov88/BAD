@@ -3,11 +3,10 @@ const noSpace = '';
 const textArea = document.querySelector('[data-text-area]');
 const form = document.querySelector('[data-form]');
 const button = document.querySelector('[data-button]');
+const result = document.querySelector('[data-result]');
 button.addEventListener('click', (event) => {
   event.preventDefault();
-  console.clear();
-  getLettersArray();
-  //form.reset();
+  result.innerText = `Answer is "${getRuquiredLetter().toUpperCase()}"`;
 });
 function getWordArray() {
   text = textArea.value.toLowerCase();
@@ -21,4 +20,21 @@ function getLettersArray() {
   });
   return lettersArray;
 }
-
+function getFirstUnicalElement(el) {
+  for (let count = 0; count < el.length; count++) {
+    if (el.indexOf(el[count]) === el.lastIndexOf(el[count])) {
+     return el[count];
+     break;
+    }
+  }
+}
+function getFirstUnicalLetters() {
+  unicalLettersArray = new Array();
+  getLettersArray().forEach(element => {
+    unicalLettersArray.push(getFirstUnicalElement(element));
+  });
+  return unicalLettersArray;
+}
+function getRuquiredLetter() {
+  return getFirstUnicalElement(getFirstUnicalLetters());
+}

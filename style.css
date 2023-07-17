@@ -1,16 +1,14 @@
-.text--hidden {
-  display: none;
-}
-
-.panel {
+.main__result {
   width: 200px;
-  height: 200px;
+  height: 100px;
+  background-color: #E02173;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
 }
 
-.red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;;
+.main__text-area {
+  width: 500px;
+  height: 300px;
 }
